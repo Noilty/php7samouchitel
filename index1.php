@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>One Lesson</title>
+        <meta charset='utf-8'>
+        <title>Самоучитель РНР 7</title>
     </head>
     <body>
         <?php
