@@ -1,3 +1,16 @@
+<html>
+    <head>
+        <title>One</title>
+    </head>
+    <body>
+        <?php
+        $name = 'Roma';
+        echo Hello($name);
+        ?>
+    </body>
+</html>
+
 <?php
-$name = 'Roma';
-echo 'Hello '.$name.'!';
+function Hello($str){
+    return 'Hello, '.$str.'!';
+}
