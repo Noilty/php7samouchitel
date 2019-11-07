@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>One</title>
+        <title>One Lesson</title>
     </head>
     <body>
         <?php
