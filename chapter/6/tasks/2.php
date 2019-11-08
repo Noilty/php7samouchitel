@@ -15,7 +15,6 @@ function myRequire($array){
     foreach ($array as $array_value) {
         //basename() — Возвращает последний компонент имени из указанного пути
         $file_name = basename($array_value);
-        
         //str_replace() — Заменяет все вхождения строки поиска на строку замены
         $name = "file-".str_replace('.', '-', $file_name); // 1 итерация = file-point-php
         if(!defined($name)){
@@ -26,3 +25,4 @@ function myRequire($array){
     }
 }
 
+// PS: Спасибо Kerry_Jr
