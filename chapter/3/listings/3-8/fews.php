@@ -1,3 +1,4 @@
+<meta charset='utf-8'>
 <?php
 if(mt_rand(0, 1)) {
     ?>

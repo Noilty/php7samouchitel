@@ -1,3 +1,4 @@
+<meta charset='utf-8'>
 <?php
 $id_menu = 3; 
 eval("\$active$id_menu = true;");

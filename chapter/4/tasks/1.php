@@ -1,3 +1,4 @@
+<meta charset='utf-8'>
 <?php
 // Задание -> 1
 // Найдите в документации на сайте http://php.net функцию is _ nurneric (). Чем она отличается от функций is _ int () и is _ float ()? 

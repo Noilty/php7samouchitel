@@ -1,3 +1,4 @@
+<meta charset='utf-8'>
 <?php
 $id_menu = 3;
 $str = "active$id_menu"; // active3
