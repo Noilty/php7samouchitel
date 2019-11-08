@@ -12,16 +12,17 @@ $array = [
 myRequire($array);
 
 function myRequire($array){
-    $i = 0;
     foreach ($array as $array_value) {
-        $i++;
-        $name = "file{$i}";
-        define($name, $array_value);
+        //basename() — Возвращает последний компонент имени из указанного пути
+        $file_name = basename($array_value);
         
-        if(defined($name)){
-            require constant($name);
-            echo "$name: ". constant($name);
-            echo " [подключен]<br />";
+        //str_replace() — Заменяет все вхождения строки поиска на строку замены
+        $name = "file-".str_replace('.', '-', $file_name); // 1 итерация = file-point-php
+        if(!defined($name)){
+            define($name, $array_value);
+            require $array_value;
+            echo "$array_value: [подключен]<br />";
         }
     }
 }
+
