@@ -55,3 +55,16 @@ do {
     <?php endforeach;?>
     </tbody>
 </table>
+<?php
+
+deBug($date);
+
+/**
+ * MyDebug
+ * @param type $param
+ */
+function deBug($param) {
+    print '<pre>';
+    var_dump($param);
+    print '</pre>';
+}
