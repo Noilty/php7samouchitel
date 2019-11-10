@@ -5,9 +5,22 @@
 
 // file — Читает содержимое файла и помещает его в массив
 
-$month = file('month.txt');
+$file_month = file('month.txt');
 
-foreach ($month as $value) {
+foreach ($file_month as $value) {
     $i++;
+    $mass_month[] = $value;
     echo "{$i}: {$value}<br />";
+}
+
+deBug($mass_month);
+
+/**
+ * MyDebug
+ * @param type $param
+ */
+function deBug($param) {
+    print '<pre>';
+    var_dump($param);
+    print '</pre>';
 }
