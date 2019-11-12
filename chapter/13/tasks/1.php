@@ -59,7 +59,6 @@ if(!empty($errors)){
             <legend>Точка: B</legend>
                 ( <input type="text" name="B1" value="<?= htmlspecialchars($data['B1'], ENT_QUOTES); ?>" /> : <input type="text" name="B2" value="<?= htmlspecialchars($data['B2'], ENT_QUOTES); ?>" /> )
         </fieldset>
-        
         <?php if(!empty($result)): ?>
         <fieldset>
             <legend>Пара точек</legend>
