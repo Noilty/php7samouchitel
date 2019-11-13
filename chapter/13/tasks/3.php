@@ -12,14 +12,14 @@
 
 $data = $_POST;
 $name_file = 'list.txt';
-$list_mass = explode(' ', setList($name_file));
-$list_str = implode(' ', deleteElement($data['list_v'], $list_mass));
+$txt_mass = explode(' ', setList($name_file));
 
 //Проверяем не пустой ли глобальный массив пост
 if(!empty($data)){
+    $list_str = implode(' ', deleteElement($txt_mass, $data['list_v']));
     echo '<br />'.var_dump($data['list_v']); //Массив с формы
-    echo '<br />'.var_dump($list_mass); //Массив из файла list.txt
-    echo '<br />'.var_dump(deleteElement($data['list_v'], $list_mass));
+    echo '<br />'.var_dump($txt_mass); //Массив из файла list.txt
+    echo '<br />'.var_dump(deleteElement($data['list_v'], $txt_mass));
     //getContent($name_file, $list_str);
     exit();
 }
@@ -32,7 +32,7 @@ if(!empty($data)){
     </head>
     <body>
         <form method="POST">
-            <?php foreach ($list_mass as $v): ?>
+            <?php foreach ($txt_mass as $v): ?>
             <label><input type="checkbox" name="list_v[]" value="<?= $v ?>" /><?= $v ?></label><br />
             <?php endforeach; ?>
             <input type="submit" value="Удалить" />
@@ -66,16 +66,17 @@ function getContent($file_name, $content)
  * @param type $mass_1
  * @param type $mass_2
  */
-function deleteElement($mass_1, $mass_2) 
+function deleteElement($txt_mass, $checked_mass) 
 {
-    for ($i = 0; $i < count($mass_1); $i++) 
-    {
-        for ($j = 0; $j < count($mass_2); $j++) 
-        {
-            if($mass_1[$i] == $mass_2[$j]){
-                unset($mass_2[$j]);
-            }
-        }
-    }
-    return $mass_2;
+//    for ($i = 0; $i < count($mass_1); $i++) 
+//    {
+//        for ($j = 0; $j < count($mass_2); $j++) 
+//        {
+//            if($mass_1[$i] == $mass_2[$j]){
+//                unset($mass_2[$j]);
+//            }
+//        }
+//    }
+//    return $mass_2;
+    return array_diff($checked_mass, $txt_mass);
 }
